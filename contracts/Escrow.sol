@@ -8,6 +8,8 @@ contract Escrow {
 
 	bool public isApproved;
 
+	event EscrowApproved(address indexed by, address to, uint256 amount);
+
 	constructor(address _arbiter, address _beneficiary) payable {
 		arbiter = _arbiter;
 		beneficiary = _beneficiary;
@@ -23,5 +25,7 @@ contract Escrow {
  		require(sent, "Failed to send Ether");
 		emit Approved(balance);
 		isApproved = true;
+
+		emit EscrowApproved(arbiter, beneficiary, balance);
 	}
 }
