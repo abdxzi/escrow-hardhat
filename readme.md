@@ -24,9 +24,25 @@ Compile the contracts using `npx hardhat compile`. The artifacts will be placed 
 
 To run the front-end application run `npm start` from the `/app` directory. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
+## How to deploy in live testnetwork
+- Create a RPC URL in any of the providers like alchemy. 
+- Save the RPC URI and wallet private key in `.env` file
+- run `npx hardhat run ./scripts/deploy.js --network [NETWORK_NAME]`
 
+Network need to be configured in the `hardhat.config.js`
 
+`.env` example:
 
+```
+TESTNET_RPC_URL_SEPOLIA=""
+TESTNET_PRIVATE_KEY=""
+```
 
+## Tasks done
 
-SEPOLIA : `0x984A8145886F336ea3cF6da1E4BF63e42Db52C93`
+✔️ Ether Conversion <br>
+✔️ Live Network deployment<br>
+✔️ Styling
+
+Example contract deployed at `0x984A8145886F336ea3cF6da1E4BF63e42Db52C93` in Ethereum Sepolia
+SEPOLIA :
